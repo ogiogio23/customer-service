@@ -6,15 +6,15 @@ import javax.validation.constraints.NotBlank;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Customer {
-    @NotBlank
+    @NotBlank(message = "First Name is required.")
     private String firstName;
-    @NotBlank
+    @NotBlank(message = "First Name is required.")
     private String lastName;
-    @NotBlank
+    @NotBlank(message = "First Name is required.")
     private String phoneNumber;
-    @NotBlank
+    @NotBlank(message = "First Name is required.")
     private String username;
-    @NotBlank
+    @NotBlank(message = "First Name is required.")
     private String email;
 
     public String getFirstName() {
