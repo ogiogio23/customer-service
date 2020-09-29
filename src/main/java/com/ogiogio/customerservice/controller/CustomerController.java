@@ -13,7 +13,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value="/api")
+@RequestMapping(value="/api/v1")
 public class CustomerController {
     private final CustomerService customerService;
 
@@ -22,11 +22,11 @@ public class CustomerController {
         this.customerService = customerService;
     }
     @RequestMapping(value ="/customer/register", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public BaseResponse addCustomer(@RequestBody@Validated Customer customer){
+    public BaseResponse addCustomer(@RequestBody @Validated Customer customer){
         return this.customerService.addCustomer(customer);
     }
     @RequestMapping(value ="/customer/update", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
-    public BaseResponse updateCustomer(@RequestBody@Validated Customer customer){
+    public BaseResponse updateCustomer(@RequestBody @Validated Customer customer){
         return this.customerService.updateCustomer(customer);
     }
     @RequestMapping(value ="/customer/delete/{email}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
